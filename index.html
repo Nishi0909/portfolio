@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Nishi D. Patel | Business Analytics Portfolio&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/@phosphor-icons/web"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--primary: #4f46e5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--secondary: #ec4899;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--accent: #06b6d4;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-light: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-light);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #1e293b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#canvas-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: -1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle at top right, #e0e7ff, #f8fafc 50%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Fancy Glassmorphism */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.7);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(12px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-10px) scale(1.01);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.9);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--primary);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Animated Cartoon Character */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.data-mascot {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: bounce 3s ease-in-out infinite;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filter: drop-shadow(0 20px 30px rgba(79, 70, 229, 0.3));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes bounce {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { transform: translateY(0) rotate(-2deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: translateY(-25px) rotate(3deg); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--primary), var(--secondary));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Floating Analytics Emojis */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.floating-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-fancy {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--primary), #6366f1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.btn-fancy:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cert-tag {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>@apply px-3 py-1 bg-white/60 border border-indigo-100 rounded-full text-[10px] font-bold text-indigo-700 shadow-sm transition-all hover:bg-indigo-600 hover:text-white cursor-default;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="canvas-container"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="fixed top-0 w-full z-[100] px-6 py-4 flex justify-between items-center bg-white/30 backdrop-blur-xl border-b border-white/50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg"&gt;NP&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hidden sm:block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-lg font-extrabold tracking-tight"&gt;Nishi D. Patel&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-[10px] uppercase tracking-widest text-indigo-500 font-bold"&gt;Business Analytics &amp; Management&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex gap-4 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="mailto:niship505@gmail.com" class="hidden md:flex items-center gap-2 text-sm font-semibold hover:text-indigo-600 transition"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i class="ph ph-envelope"&gt;&lt;/i&gt; niship505@gmail.com</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="tel:7737989802" class="px-4 py-2 bg-slate-900 text-white rounded-full text-xs font-bold hover:bg-indigo-600 transition"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>(773) 798-9802</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="min-h-screen flex flex-col items-center justify-center pt-24 px-6 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="data-mascot mb-8 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg width="180" height="180" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;circle cx="100" cy="100" r="80" fill="url(#grad1)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;path d="M60 85C60 76.1634 67.1634 69 76 69H124C132.837 69 140 76.1634 140 85V135C140 143.837 132.837 151 124 151H76C67.1634 151 60 143.837 60 135V85Z" fill="white"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;circle cx="85" cy="100" r="8" fill="#4f46e5" class="eye" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;circle cx="115" cy="100" r="8" fill="#4f46e5" class="eye" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;rect x="80" y="125" width="40" height="6" rx="3" fill="#e2e8f0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;path d="M100 40V60M70 45L85 62M130 45L115 62" stroke="#ec4899" stroke-width="6" stroke-linecap="round"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;linearGradient id="grad1" x1="0" y1="0" x2="200" y2="200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;stop offset="0%" stop-color="#4f46e5" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;stop offset="100%" stop-color="#ec4899" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/linearGradient&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="text-center max-w-5xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-sm font-bold animate-pulse"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="w-2 h-2 rounded-full bg-indigo-500"&gt;&lt;/span&gt; Currently Pursuing MS in Business Analytics</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-6xl md:text-8xl font-black mb-6 leading-[1.1] tracking-tight"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Data Science meets &lt;br/&gt;&lt;span class="gradient-text"&gt;Management Strategy.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-slate-500 text-xl md:text-2xl max-w-3xl mx-auto mb-10 font-medium leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>I'm &lt;span class="font-bold text-slate-800"&gt;Nishi Dineshkumar Patel&lt;/span&gt;. Currently specializing in Analytics &amp; Management Tools to transform complex data into executive decisions.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-wrap justify-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#experience" class="btn-fancy flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph-bold ph-chart-line-up"&gt;&lt;/i&gt; My Analytics Journey</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://www.linkedin.com/in/nishi-patel-948021257" target="_blank" class="px-8 py-4 bg-white border-2 border-slate-100 rounded-full font-bold text-slate-800 hover:border-indigo-600 hover:text-indigo-600 transition-all flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph-bold ph-linkedin-logo text-2xl"&gt;&lt;/i&gt; Connect on LinkedIn</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="py-20 px-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-card p-10 text-center pop-in"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-16 h-16 bg-blue-100 rounded-3xl flex items-center justify-center text-blue-600 mx-auto mb-6 text-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph-fill ph-shield-check"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-5xl font-black text-slate-800 mb-2"&gt;98%&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-slate-500 font-bold uppercase tracking-widest text-xs"&gt;Defect-Free Quality Assurance (TCS)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-card p-10 text-center pop-in" style="transition-delay: 0.1s"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-16 h-16 bg-rose-100 rounded-3xl flex items-center justify-center text-rose-600 mx-auto mb-6 text-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph-fill ph-timer"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-5xl font-black text-slate-800 mb-2"&gt;30%&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-slate-500 font-bold uppercase tracking-widest text-xs"&gt;Automated Reporting Efficiency&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-card p-10 text-center pop-in" style="transition-delay: 0.2s"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-16 h-16 bg-amber-100 rounded-3xl flex items-center justify-center text-amber-600 mx-auto mb-6 text-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph-fill ph-trend-up"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-5xl font-black text-slate-800 mb-2"&gt;12%&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-slate-500 font-bold uppercase tracking-widest text-xs"&gt;Projected Sales Growth Modeling&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="experience" class="py-24 px-6 bg-white/40"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-5xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-indigo-600 font-black uppercase tracking-[0.3em] text-xs"&gt;Professional Growth&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-5xl font-black text-slate-900 mt-2"&gt;Core &lt;span class="gradient-text"&gt;Experience.&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="space-y-12 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="absolute left-8 top-0 bottom-0 w-1 bg-slate-100 rounded-full hidden md:block"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative pl-0 md:pl-24 group pop-in"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute left-4 md:left-[22px] top-0 w-8 h-8 bg-indigo-600 rounded-full border-4 border-white shadow-lg hidden md:block z-10 group-hover:scale-150 transition-all"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="glass-card p-10 hover:border-indigo-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-wrap justify-between items-start mb-6 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-2xl font-bold"&gt;Policy Research &amp; Data Analytics Intern&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-indigo-600 font-bold"&gt;Rhode Island State Government&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-4 py-1 bg-slate-900 text-white rounded-full text-xs font-bold"&gt;SEPT 2025 – DEC 2025&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="space-y-4 text-slate-600 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li class="flex gap-3 items-start"&gt;&lt;i class="ph ph-check-circle text-emerald-500 text-xl mt-1"&gt;&lt;/i&gt; Statistical evaluation of legislative datasets to identify socio-economic impact trends.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li class="flex gap-3 items-start"&gt;&lt;i class="ph ph-check-circle text-emerald-500 text-xl mt-1"&gt;&lt;/i&gt; Generating executive-ready reports for state-level strategic planning.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative pl-0 md:pl-24 group pop-in"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="absolute left-4 md:left-[22px] top-0 w-8 h-8 bg-rose-500 rounded-full border-4 border-white shadow-lg hidden md:block z-10 group-hover:scale-150 transition-all"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="glass-card p-10 hover:border-rose-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-wrap justify-between items-start mb-6 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="text-2xl font-bold"&gt;Quality Analytics Intern&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-rose-600 font-bold"&gt;Tata Consultancy Services (TCS)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-4 py-1 bg-slate-900 text-white rounded-full text-xs font-bold"&gt;JAN 2023 – JAN 2024&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="space-y-4 text-slate-600 font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li class="flex gap-3 items-start"&gt;&lt;i class="ph ph-check-circle text-emerald-500 text-xl mt-1"&gt;&lt;/i&gt; Implemented RPA and Python scripts to reduce production cycle time by 15%.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li class="flex gap-3 items-start"&gt;&lt;i class="ph ph-check-circle text-emerald-500 text-xl mt-1"&gt;&lt;/i&gt; Developed dynamic Tableau KPI dashboards for real-time operations monitoring.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="projects" class="py-24 px-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-6xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black mb-12 text-center"&gt;Selected &lt;span class="gradient-text"&gt;Analytics Projects&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card p-8 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl mb-4 group-hover:scale-125 transition-transform inline-block"&gt;📈&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Nike Sales Forecasting&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-500 mb-4 font-medium"&gt;Regression-based predictive model contributing to 12% revenue growth projection.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card p-8 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl mb-4 group-hover:scale-125 transition-transform inline-block"&gt;🔋&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;IoT Smart Energy&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-500 mb-4 font-medium"&gt;Predictive consumption model reducing energy costs by 10% via real-time Tableau insights.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card p-8 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-4xl mb-4 group-hover:scale-125 transition-transform inline-block"&gt;💄&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-bold mb-2"&gt;Sephora Churn Analysis&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-500 mb-4 font-medium"&gt;Engagement analysis identifying key drivers for repeat purchase behavior and customer retention.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="py-24 px-6 bg-white/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-6xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card p-12 relative overflow-hidden border-indigo-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-4 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-2xl shadow-sm"&gt;🎓&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-3xl font-black"&gt;Academic &lt;span class="text-indigo-600"&gt;Foundation&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between items-start mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold leading-tight"&gt;Master of Science in Management &lt;br/&gt;&lt;span class="text-indigo-600"&gt;(Business Analytics)&lt;/span&gt;&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-3 py-1 bg-indigo-600 text-white rounded-full text-sm font-black whitespace-nowrap"&gt;3.5 GPA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-slate-500 font-bold"&gt;St. Francis College, Brooklyn, NY&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-slate-400 font-semibold text-sm"&gt;Expected May 2026&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="pt-6 border-t border-indigo-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-[10px] font-black uppercase tracking-widest text-indigo-400 mb-4"&gt;Core Management Tools&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-wrap gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] font-bold"&gt;Python&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] font-bold"&gt;SQL&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] font-bold"&gt;Tableau&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] font-bold"&gt;RPA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="px-3 py-1 bg-white border border-slate-100 rounded-full text-[10px] font-bold"&gt;Statistical Analysis&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="glass-card p-12 border-rose-100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-4 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center text-2xl shadow-sm"&gt;📜&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-3xl font-black"&gt;Expert &lt;span class="text-rose-600"&gt;Certs&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="grid grid-cols-1 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-5 bg-white/80 rounded-2xl border border-indigo-50 flex items-center justify-between group hover:border-indigo-400 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i class="ph-fill ph-medal text-amber-500 text-2xl"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-xs font-black text-slate-800"&gt;PMI-PBA Professional&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-[10px] text-slate-400 font-bold uppercase"&gt;Business Analysis (2025)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-[10px] font-bold text-indigo-500"&gt;41.5 Hrs&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-5 bg-white/80 rounded-2xl border border-indigo-50 flex items-center justify-between group hover:border-indigo-400 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i class="ph-fill ph-briefcase text-blue-500 text-2xl"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-xs font-black text-slate-800"&gt;Global Markets Analyst&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-[10px] text-slate-400 font-bold uppercase"&gt;Bank of America | Forage (2025)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-[10px] font-bold text-emerald-500"&gt;Completed&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-5 bg-white/80 rounded-2xl border border-indigo-50 flex items-center justify-between group hover:border-indigo-400 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i class="ph-fill ph-database text-indigo-500 text-2xl"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-xs font-black text-slate-800"&gt;Big Data 101&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-[10px] text-slate-400 font-bold uppercase"&gt;IBM SkillsBuild (2025)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-[10px] font-bold text-indigo-500"&gt;Verified&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-5 bg-white/80 rounded-2xl border border-indigo-50 flex items-center justify-between group hover:border-indigo-400 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i class="ph-fill ph-certificate text-purple-500 text-2xl"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-xs font-black text-slate-800"&gt;Business Intelligence &amp; Analytics&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;p class="text-[10px] text-slate-400 font-bold uppercase"&gt;Saylor Academy (88% Grade)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-[10px] font-bold text-indigo-500"&gt;46 Hrs&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="py-20 px-6 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="text-4xl font-black mb-4 tracking-tight"&gt;Let's Connect for &lt;span class="gradient-text"&gt;Strategic Opportunities.&lt;/span&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-slate-500 font-medium mb-10"&gt;Based in Columbia, TN 38401 | Available for Global Relocation&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-wrap justify-center gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="mailto:niship505@gmail.com" class="group text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-xl mb-2 group-hover:bg-indigo-600 group-hover:text-white transition-all mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph ph-envelope-simple"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"&gt;Email&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="https://www.linkedin.com/in/nishi-patel-948021257" target="_blank" class="group text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-xl mb-2 group-hover:bg-indigo-600 group-hover:text-white transition-all mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph ph-linkedin-logo"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"&gt;LinkedIn&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="tel:7737989802" class="group text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-xl mb-2 group-hover:bg-indigo-600 group-hover:text-white transition-all mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i class="ph ph-phone"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"&gt;Call&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="mt-20 text-[10px] text-slate-400 font-bold uppercase tracking-[0.5em]"&gt;Nishi Dineshkumar Patel © 2026&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let scene, camera, renderer, particles;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function init3D() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scene = new THREE.Scene();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderer.setSize(window.innerWidth, window.innerHeight);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('canvas-container').appendChild(renderer.domElement);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const geometry = new THREE.BufferGeometry();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const vertices = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; 1500; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vertices.push(</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>THREE.MathUtils.randFloatSpread(1500),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>THREE.MathUtils.randFloatSpread(1500),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>THREE.MathUtils.randFloatSpread(1500)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const material = new THREE.PointsMaterial({<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>color: 0x6366f1,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>size: 2,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>transparent: true,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 0.3<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>particles = new THREE.Points(geometry, material);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scene.add(particles);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>camera.position.z = 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animate();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function animate() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>requestAnimationFrame(animate);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>particles.rotation.y += 0.0003;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>particles.rotation.x += 0.0001;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderer.render(scene, camera);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initGSAP() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gsap.registerPlugin(ScrollTrigger);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>gsap.utils.toArray('.pop-in').forEach(el =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gsap.fromTo(el,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ opacity: 0, y: 30, scale: 0.98 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>scrollTrigger: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>trigger: el,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>start: "top 90%",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>opacity: 1,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>y: 0,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>scale: 1,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>duration: 0.8,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ease: "power2.out"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.addEventListener('mousemove', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const eyes = document.querySelectorAll('.eye');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const x = (e.clientX / window.innerWidth - 0.5) * 8;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const y = (e.clientY / window.innerHeight - 0.5) * 8;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>eyes.forEach(eye =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>gsap.to(eye, { x: x, y: y, duration: 0.2 });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.onload = () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>init3D();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initGSAP();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const icons = ['📊', '📉', '💼', '💡', '🔍', '⚙️'];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for(let i=0; i&lt;12; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const el = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.className = 'floating-icon text-3xl select-none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.innerText = icons[Math.floor(Math.random() * icons.length)];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.style.left = Math.random() * 90 + 'vw';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>el.style.top = Math.random() * 90 + 'vh';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.appendChild(el);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>gsap.to(el, {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y: "-=80",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x: "+=40",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>rotation: 15,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>duration: 15 + Math.random() * 15,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>repeat: -1,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>yoyo: true,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>ease: "sine.inOut"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('resize', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>camera.aspect = window.innerWidth / window.innerHeight;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>camera.updateProjectionMatrix();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderer.setSize(window.innerWidth, window.innerHeight);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
